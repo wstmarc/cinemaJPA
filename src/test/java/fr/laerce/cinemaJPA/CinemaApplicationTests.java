@@ -1,4 +1,4 @@
-package fr.laerce.cinema;
+package fr.laerce.cinemaJPA;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

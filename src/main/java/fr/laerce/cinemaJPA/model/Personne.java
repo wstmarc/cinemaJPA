@@ -1,14 +1,26 @@
-package fr.laerce.cinema.model;
+package fr.laerce.cinemaJPA.model;
 
 import javax.persistence.*;
 
+@Table(name="Persons")
 @Entity
-public class Persons {
+public class Personne {
     private long id;
     private String surname;
     private String givenname;
     private Integer birthYear;
     private String imagePath;
+
+    public Personne(long id, String surname, String givenname, Integer birthYear, String imagePath) {
+        this.id = id;
+        this.surname = surname;
+        this.givenname = givenname;
+        this.birthYear = birthYear;
+        this.imagePath = imagePath;
+    }
+
+    public Personne() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,7 +78,7 @@ public class Persons {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Persons persons = (Persons) o;
+        Personne persons = (Personne) o;
 
         if (id != persons.id) return false;
         if (surname != null ? !surname.equals(persons.surname) : persons.surname != null) return false;

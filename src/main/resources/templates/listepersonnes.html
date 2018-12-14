@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Liste des personnes</title>
+    <div th:replace="fragments/header :: entetecss"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header0"/>
+<div th:replace="fragments/header :: header"/>
+<h2 class="centretext">Voici une liste des personnes :</h2>
+
+
+ <!--## Liste des films affichés dans une liste ## -->
+<!--<ul>-->
+    <!--<li th:each="personne : ${personnes}" th:utext="${'Nom: <b>'+personne.getSurname()+'</b>; Prénom: <b>'+personne.getGivenname()+'</b>'}">-->
+        <!--&lt;!&ndash;<b th:text="${}"></b><b></b>&ndash;&gt;-->
+    <!--</li>-->
+<!--</ul>-->
+<ul>
+    <li th:each="personne : ${personnes}" th:utext="${'Nom: <b>'+${personne.getSurname()}+'</b>; Prénom: <b>'+${personne.getGivenname()}+'</b>'}">
+    </li>
+</ul>
+<!--<ul th:each="personne : ${personnes}">
+    <li th:text="${personne.getGivenname()}"></li>
+</ul>-->
+
+<div th:replace="fragments/footer :: footer"/>
+<div th:replace="fragments/footer :: scriptsjs"/>
+</body>
+</html>

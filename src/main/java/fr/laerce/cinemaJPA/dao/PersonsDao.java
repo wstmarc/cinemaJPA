@@ -1,6 +1,6 @@
-package fr.laerce.cinema.dao;
+package fr.laerce.cinemaJPA.dao;
 
-import fr.laerce.cinema.model.Persons;
+import fr.laerce.cinemaJPA.model.Personne;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,20 +17,20 @@ public class PersonsDao {
     private EntityManager entityManager;
 
     @Transactional
-    public void save(Persons p){
+    public void save(Personne p){
         entityManager.persist(p);
     }
 
-    public List<Persons> getAll(){
-        Query query = entityManager.createQuery("Select p from Persons p");
+    public List<Personne> getAll(){
+        Query query = entityManager.createQuery("Select p from Personne p");
         return query.getResultList();
     }
 
-    public Persons getById(BigInteger id){
-        Persons retVal = null;
-        Query query = entityManager.createQuery("select p from Persons p where p.id = :id");
+    public Personne getById(BigInteger id){
+        Personne retVal = null;
+        Query query = entityManager.createQuery("select p from Personne p where p.id = :id");
         query.setParameter("id", id);
-        List<Persons> persons = query.getResultList();
+        List<Personne> persons = query.getResultList();
         if(!persons.isEmpty()){
             retVal = persons.get(0);
         }

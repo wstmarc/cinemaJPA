@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>fr.laerce</groupId>
-    <artifactId>cinema</artifactId>
+    <artifactId>cinemaJPA</artifactId>
     <version>1.0-alpha01</version>
-    <name>cinema</name>
+    <name>cinemaJPA</name>
     <description>Gestion d&#39;un cinema de quartier</description>
 
     <properties>
